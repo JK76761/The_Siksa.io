@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>회원가입 | 더 식사</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>더 식사</span>
+      </a>
+      <nav class="nav">
+        <a href="shop.html">쇼핑</a>
+        <a href="cart.html">장바구니</a>
+        <a href="login.html" class="pill">로그인</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container" style="max-width:720px;">
+      <div class="breadcrumb">Home / 회원가입</div>
+
+      <section class="panel">
+        <div class="section-title">회원가입</div>
+        <div class="section-sub">프로토타입: 저장/검증은 생략</div>
+
+        <form class="form" style="margin-top:14px;">
+          <div class="field">
+            <label>이름</label>
+            <input id="name" type="text" placeholder="김지오" />
+          </div>
+
+          <div class="field">
+            <label>이메일</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="field">
+            <label>비밀번호</label>
+            <input id="password" type="password" placeholder="최소 8자(예시)" />
+          </div>
+
+          <div class="field">
+            <label>비밀번호 확인</label>
+            <input id="passwordConfirm" type="password" placeholder="••••••••" />
+          </div>
+
+          <button id="signupBtn" class="btn btn-primary" type="button">가입하기</button>
+          <a class="btn" href="login.html">이미 계정이 있어요</a>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <div>© 더 식사 (Prototype)</div>
+      <div>회원가입은 UI 데모</div>
+    </div>
+  </footer>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

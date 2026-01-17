@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>로그인 | 더 식사</title>
+
+  <!-- ✅ CSS 경로: style.css가 같은 폴더면 OK -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>더 식사</span>
+      </a>
+      <nav class="nav">
+        <a href="shop.html">쇼핑</a>
+        <a href="cart.html">장바구니</a>
+        <a href="signup.html" class="pill">회원가입</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container" style="max-width:720px;">
+      <div class="breadcrumb">Home / 로그인</div>
+
+      <section class="panel">
+        <div class="section-title">로그인</div>
+        <div class="section-sub">프로토타입: 인증/DB 미연동</div>
+
+        <form class="form" style="margin-top:14px;">
+          <div class="field">
+            <label>이메일</label>
+            <!-- ✅ id 추가 -->
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+
+          <div class="field">
+            <label>비밀번호</label>
+            <!-- ✅ id 추가 -->
+            <input id="password" type="password" placeholder="••••••••" />
+          </div>
+
+          <!-- ✅ 버튼 id 추가 -->
+          <button id="loginBtn" class="btn btn-primary" type="button">로그인</button>
+          <a class="btn" href="signup.html">처음이신가요? 회원가입</a>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <div>© 더 식사 (Prototype)</div>
+      <div>로그인 기능은 화면만 구성</div>
+    </div>
+  </footer>
+
+  <!-- ✅ JS 연결: body 맨 아래에 -->
+  <script src="./js/config.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>쇼핑 | 더 식사</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>더 식사</span>
+      </a>
+
+      <nav class="nav">
+        <a href="shop.html" class="pill">쇼핑</a>
+        <a href="cart.html">장바구니 <span id="cartCount" class="badge">0</span></a>
+        <a href="login.html">로그인</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container" style="max-width:1100px;">
+      <div class="breadcrumb">Home / 쇼핑</div>
+
+      <section class="panel">
+        <div class="section-title">밀키트</div>
+        <div class="section-sub">프로토타입: 상품 데이터는 JS에 임시로 저장</div>
+
+        <!-- 검색/필터 (옵션) -->
+        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+          <input id="searchInput" class="input" type="text" placeholder="상품 검색 (예: 불고기)" style="flex:1; min-width:240px;" />
+          <select id="sortSelect" class="input" style="min-width:160px;">
+            <option value="new">정렬: 기본</option>
+            <option value="priceAsc">가격 낮은순</option>
+            <option value="priceDesc">가격 높은순</option>
+          </select>
+        </div>
+
+        <div id="productGrid" style="margin-top:16px; display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;">
+          <!-- JS가 카드 생성 -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <div>© 더 식사 (Prototype)</div>
+      <div>쇼핑/장바구니 흐름 데모</div>
+    </div>
+  </footer>
+
+  <script src="./js/shop.js"></script>
+</body>
+</html>
