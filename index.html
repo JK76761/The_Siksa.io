@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Siksa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- ✅ brand-badge(금색 사각형) 제거하고 로고로 대체 -->
+        <span class="brand-logos brand-logos--main" aria-label="브랜드 로고">
+          <img src="./images/IMG_1794.JPG" alt="The Siksa 로고" />
+          <img src="./images/IMG_1795.JPG" alt="더식사 로고" />
+        </span>
+
+        <span class="brand-title">
+          <span class="brand-name">The Siksa</span>
+          <span class="brand-kor">더식사</span>
+        </span>
+      </a>
+
+      <div class="search" aria-label="검색">
+        <span class="dot" aria-hidden="true"></span>
+        <input placeholder="밀키트 검색 (예: 육개장)" />
+      </div>
+
+      <nav class="nav">
+        <a href="shop.html">쇼핑</a>
+        <a href="cart.html" class="pill">장바구니</a>
+        <a href="login.html">로그인</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <h1>브리즈번 @thesiksa <br/>더식사</h1>
+          <p>이번주 공구는 x월 xx 부터 x월 xx 까지 진행합니다</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="shop.html">상품 전체보기</a>
+            <a class="btn" href="signup.html">회원가입</a>
+            <a class="btn" href="checkout.html">결제방법</a>
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="label">베스트</div>
+            <div class="value">설렁탕</div>
+            <div class="hint">15분 완성 · 2인분 · 초보도 OK</div>
+          </div>
+          <div class="kpi">
+            <div class="label">상품 수령</div>
+            <div class="value">픽업 및 배송 가능합니다</div>
+            <div class="hint">배송은 300불부터 가능합니다</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-title">인기 밀키트</div>
+            <div class="section-sub">산뜻한 카드 UI로 빠르게 탐색</div>
+          </div>
+          <a class="btn" href="shop.html">전체 보기</a>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <img src="./images/설.jpg" alt="육개장" class="thumb-img" />
+            </div>
+            <div class="body">
+              <h3>육개장</h3>
+              <div class="row">
+                <span class="price">$18.90</span>
+                <span class="tag">베스트</span>
+              </div>
+              <div class="meta">15분 · 2인분 · 시원한맛</div>
+              <div class="row">
+                <a class="btn" href="product.html">상세</a>
+                <a class="btn btn-primary" href="cart.html">담기(프로토)</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="./images/돼.jpg" alt="갈비탕" class="thumb-img" />
+            </div>
+            <div class="body">
+              <h3>갈비탕</h3>
+              <div class="row">
+                <span class="price">$16.50</span>
+                <span class="tag">간편</span>
+              </div>
+              <div class="meta">12분 · 2인분 · 시원한맛</div>
+              <div class="row">
+                <a class="btn" href="product.html">상세</a>
+                <a class="btn btn-primary" href="cart.html">담기(프로토)</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="./images/설.jpg" alt="설렁탕" class="thumb-img" />
+            </div>
+            <div class="body">
+              <h3>설렁탕</h3>
+              <div class="row">
+                <span class="price">$19.80</span>
+                <span class="tag">매콤</span>
+              </div>
+              <div class="meta">18분 · 2인분 · 스트레스 해소</div>
+              <div class="row">
+                <a class="btn" href="product.html">상세</a>
+                <a class="btn btn-primary" href="cart.html">담기(프로토)</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container foot">
+      <div>© 더 식사 (Prototype)</div>
+      <div>문의: support@deosigaya.test · 결제/배송 미연동</div>
+    </div>
+  </footer>
+</body>
+</html>

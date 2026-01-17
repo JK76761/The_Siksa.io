@@ -1,0 +1,591 @@
+:root{
+  --bg: #f7faf9;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --brand: #15b981;      /* 민트 */
+  --brand-2: #06b6d4;    /* 시원한 블루 */
+  --shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
+  --radius: 18px;
+  --max: 1100px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background:
+    radial-gradient(1000px 500px at 10% 0%, rgba(21,185,129,.14), transparent 60%),
+    radial-gradient(900px 450px at 90% 10%, rgba(6,182,212,.14), transparent 55%),
+    var(--bg);
+}
+
+a{ color: inherit; text-decoration: none; }
+img{ max-width: 100%; display: block; }
+
+.container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(247,250,249,0.75);
+  border-bottom: 1px solid rgba(226,232,240,0.7);
+}
+.header-inner{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 0;
+  gap: 14px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.brand-badge{
+  width: 34px; height: 34px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow: 0 10px 20px rgba(21,185,129,.25);
+}
+.nav{
+  display:flex; gap: 14px; align-items:center;
+  color: var(--muted);
+  font-weight: 600;
+}
+.nav a{
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+.nav a:hover{ background: rgba(226,232,240,.55); color: var(--text); }
+.nav .pill{
+  background: rgba(21,185,129,.14);
+  color: #065f46;
+}
+.nav .pill:hover{ background: rgba(21,185,129,.20); }
+
+.search{
+  flex: 1;
+  display:flex; align-items:center;
+  max-width: 420px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.85);
+  border-radius: 999px;
+  padding: 10px 14px;
+  gap: 10px;
+}
+.search input{
+  border: none; outline: none; background: transparent;
+  width: 100%;
+  font-size: 14px;
+}
+.search .dot{
+  width: 10px; height: 10px; border-radius: 999px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.9);
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn:hover{ box-shadow: var(--shadow); transform: translateY(-1px); }
+.btn-primary{
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: white;
+  border: none;
+}
+.btn-primary:hover{ filter: brightness(1.02); }
+
+.hero{
+  padding: 38px 0 22px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.hero-card{
+  background: rgba(255,255,255,.8);
+  border: 1px solid rgba(226,232,240,.8);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+.hero-card h1{
+  margin: 0 0 10px;
+  font-size: clamp(26px, 3.2vw, 40px);
+  letter-spacing: -0.6px;
+}
+.hero-card p{
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.hero-actions{ display:flex; gap: 10px; flex-wrap: wrap; }
+
+.kpis{
+  display:grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+}
+.kpi{
+  background: rgba(255,255,255,.8);
+  border: 1px solid rgba(226,232,240,.8);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+.kpi .label{ color: var(--muted); font-weight: 700; font-size: 13px; }
+.kpi .value{ font-size: 22px; font-weight: 900; margin-top: 6px; }
+.kpi .hint{ color: var(--muted); margin-top: 8px; font-size: 13px; line-height: 1.5; }
+
+.section{ padding: 18px 0 44px; }
+.section-head{
+  display:flex; align-items:end; justify-content:space-between;
+  gap: 10px;
+  margin: 8px 0 14px;
+}
+.section-title{
+  font-size: 20px; font-weight: 900; letter-spacing: -0.3px;
+}
+.section-sub{ color: var(--muted); font-size: 14px; }
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+.card{
+  grid-column: span 4;
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(226,232,240,.85);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.card .thumb{
+  height: 160px;
+  background:
+    radial-gradient(260px 120px at 20% 30%, rgba(21,185,129,.20), transparent 60%),
+    radial-gradient(260px 120px at 80% 20%, rgba(6,182,212,.20), transparent 60%),
+    #fff;
+  border-bottom: 1px solid rgba(226,232,240,.85);
+}
+.card .body{ padding: 14px; }
+.card h3{ margin: 0 0 6px; font-size: 16px; letter-spacing: -0.2px; }
+.price{ font-weight: 900; }
+.meta{ color: var(--muted); font-size: 13px; margin-top: 6px; }
+.card .row{ display:flex; justify-content:space-between; align-items:center; gap: 10px; margin-top: 12px; }
+.tag{
+  display:inline-flex; padding: 6px 10px; border-radius: 999px;
+  background: rgba(21,185,129,.14);
+  color: #065f46;
+  font-weight: 800; font-size: 12px;
+}
+
+.page{
+  padding: 26px 0 50px;
+}
+.breadcrumb{ color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+.panel{
+  background: rgba(255,255,255,.85);
+  border: 1px solid rgba(226,232,240,.85);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 16px;
+}
+.form{
+  display:grid;
+  gap: 12px;
+}
+.field label{
+  display:block; font-weight: 800; font-size: 13px;
+  margin-bottom: 6px;
+}
+.field input, .field select, .field textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.92);
+  outline: none;
+}
+.field textarea{ min-height: 110px; resize: vertical; }
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(226,232,240,.85);
+}
+.table th, .table td{
+  padding: 12px;
+  border-bottom: 1px solid rgba(226,232,240,.85);
+  text-align: left;
+  font-size: 14px;
+}
+.table th{ color: var(--muted); font-weight: 900; background: rgba(226,232,240,.35); }
+.table tr:last-child td{ border-bottom: none; }
+.total{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(100,116,139,.35);
+  font-weight: 900;
+}
+
+.footer{
+  border-top: 1px solid rgba(226,232,240,.8);
+  padding: 22px 0;
+  color: var(--muted);
+}
+.footer .foot{
+  display:flex; justify-content:space-between; gap: 14px; flex-wrap: wrap;
+  font-size: 13px;
+}
+
+@media (max-width: 920px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .kpis{ grid-template-rows: auto; grid-template-columns: 1fr 1fr; }
+  .card{ grid-column: span 6; }
+  .two-col{ grid-template-columns: 1fr; }
+  .search{ display:none; }
+}
+@media (max-width: 560px){
+  .card{ grid-column: span 12; }
+  .kpis{ grid-template-columns: 1fr; }
+}
+
+/* =========================
+   Black & Fancy Gold – Fine Dining Theme
+========================= */
+
+:root{
+  /* 베이스 */
+  --bg: #0b0b0d;              /* 거의 블랙 배경 */
+  --card: #ffffff;
+  --text: #0b0b0d;
+  --text-invert: #f5f5f5;
+  --muted: rgba(255,255,255,.55);
+  --line: rgba(255,255,255,.12);
+
+  /* ✨ 팬시 골드 (샴페인 골드) */
+  --gold-1: #e6c97a;          /* 하이라이트 */
+  --gold-2: #c9a24d;          /* 메인 */
+  --gold-3: #9f7f2f;          /* 딥 골드 */
+
+  --shadow: 0 18px 40px rgba(0,0,0,.55);
+  --radius: 18px;
+
+  /* 타이포 */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Arial;
+  --font-serif: ui-serif, "Playfair Display", "Didot", "Bodoni 72", "Times New Roman", serif;
+}
+
+/* ===== 전체 배경 ===== */
+body{
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(230,201,122,.12), transparent 55%),
+    radial-gradient(900px 500px at 90% 10%, rgba(0,0,0,.85), transparent 60%),
+    var(--bg);
+  color: var(--text-invert);
+}
+
+/* ===== 헤더 ===== */
+.header{
+  background: rgba(11,11,13,.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.brand span:last-child{
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: .6px;
+  color: var(--text-invert);
+}
+
+.brand-badge{
+  background: linear-gradient(
+    135deg,
+    var(--gold-1),
+    var(--gold-2),
+    var(--gold-3)
+  );
+  box-shadow: 0 12px 28px rgba(230,201,122,.35);
+}
+
+/* ===== 네비 ===== */
+.nav{
+  color: rgba(255,255,255,.65);
+}
+.nav a:hover{
+  background: rgba(255,255,255,.06);
+  color: var(--text-invert);
+}
+.nav .pill{
+  background: linear-gradient(135deg, rgba(230,201,122,.18), rgba(201,162,77,.22));
+  border: 1px solid rgba(230,201,122,.35);
+  color: var(--text-invert);
+}
+
+/* ===== 버튼 ===== */
+.btn{
+  background: rgba(255,255,255,.95);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,.12);
+}
+.btn-primary{
+  background: linear-gradient(
+    135deg,
+    var(--gold-1),
+    var(--gold-2),
+    var(--gold-3)
+  );
+  color: #0b0b0d;
+  border: none;
+  font-weight: 900;
+}
+.btn-primary:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 14px 34px rgba(230,201,122,.45);
+}
+
+/* ===== 히어로 ===== */
+.hero-card{
+  background: rgba(15,15,18,.85);
+  border: 1px solid var(--line);
+}
+.hero-card h1{
+  font-family: var(--font-serif);
+  letter-spacing: .8px;
+  color: var(--text-invert);
+}
+.hero-card p{
+  color: rgba(255,255,255,.65);
+}
+
+/* ===== KPI ===== */
+.kpi{
+  background: rgba(15,15,18,.85);
+  border: 1px solid var(--line);
+}
+.kpi .label{ color: rgba(255,255,255,.55); }
+.kpi .value{
+  font-family: var(--font-serif);
+  color: var(--gold-1);
+}
+
+/* ===== 카드 ===== */
+.card{
+  background: #ffffff;
+  color: var(--text);
+  border: none;
+  box-shadow: 0 20px 45px rgba(0,0,0,.45);
+}
+.card h3{
+  font-family: var(--font-serif);
+  letter-spacing: .3px;
+}
+
+/* 썸네일 – 검정 + 골드 라이트 */
+.card .thumb{
+  background:
+    radial-gradient(300px 140px at 30% 20%, rgba(230,201,122,.25), transparent 60%),
+    #0b0b0d;
+  border-bottom: none;
+}
+
+/* 가격 */
+.price{
+  color: var(--gold-2);
+  font-size: 18px;
+}
+
+/* 태그 */
+.tag{
+  background: rgba(230,201,122,.15);
+  border: 1px solid rgba(230,201,122,.45);
+  color: #0b0b0d;
+  font-weight: 900;
+}
+
+/* ===== 패널 ===== */
+.panel{
+  background: #ffffff;
+  color: var(--text);
+  border: none;
+  box-shadow: var(--shadow);
+}
+
+/* ===== 테이블 ===== */
+.table{
+  background: #ffffff;
+  color: var(--text);
+}
+.table th{
+  background: #0b0b0d;
+  color: var(--gold-1);
+  font-family: var(--font-serif);
+  letter-spacing: .4px;
+}
+.table td{
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+/* ===== 푸터 ===== */
+.footer{
+  background: #0b0b0d;
+  border-top: 1px solid var(--line);
+  color: rgba(255,255,255,.55);
+}
+
+/* =========================
+   Brand Logos (2 icons)
+========================= */
+.brand-title{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.brand-name{
+  font-family: var(--font-serif);
+  letter-spacing: .6px;
+}
+
+.brand-kor{
+  opacity: .9;
+  font-weight: 800;
+}
+
+.brand-logos{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 6px;
+}
+
+.brand-logos img{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  opacity: .92;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+}
+
+/* 너무 튀면 살짝 억제 */
+.brand-logos img:hover{
+  opacity: 1;
+}
+
+/* =========================
+   Card Thumb Image
+========================= */
+.card .thumb{
+  position: relative;
+  height: 160px;     /* 기존 디자인 유지 */
+  overflow: hidden;
+}
+
+.thumb-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 카드에 꽉 차게 */
+  display: block;
+  transform: scale(1.02);
+}
+
+/* 고급스러운 어두운 오버레이(텍스트가 있으면 안정감) */
+.card .thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,.10),
+    rgba(0,0,0,.35)
+  );
+  pointer-events:none;
+}
+
+/* =========================
+   Header Brand Logos (replace badge)
+========================= */
+
+/* 혹시 brand-badge가 남아있으면 안 보이게 */
+.brand-badge{ display:none !important; }
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* 로고 2개가 “배지 크기” 정도로 보이게 */
+.brand-logos--main{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* ✅ 로고 크게 (기존 badge 34px급) */
+.brand-logos--main img{
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;     /* 사진이면 둥글게 */
+  object-fit: cover;       /* JPG면 꽉 차게 */
+  display:block;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(230,201,122,.25);
+  box-shadow: 0 10px 22px rgba(0,0,0,.30);
+}
+
+/* 텍스트 정렬 */
+.brand-title{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+  line-height: 1;
+}
+
+.brand-name{
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: .6px;
+}
+
+.brand-kor{
+  font-weight: 800;
+  opacity: .9;
+}
+
+/* 모바일에서 로고 너무 커보이면 살짝 줄임 */
+@media (max-width: 560px){
+  .brand-logos--main img{
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+  }
+}
